@@ -34,11 +34,11 @@
                             </div>
                         </li>
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">It Operation <span class="caret"></span></a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">IT Operation <span class="caret"></span></a>
                             <div class="dropdown-menu">
                                 <ul>
                                     <li><a href="blog-fullwidth.html">Enterprise & Analytic Platform Op</a></li>
-                                    <li><a href="blog-left-sidebar.html">BSS & CEM Platform Op</a></li>
+                                    <li><a href="bpo">BSS & CEM Platform Op</a></li>
                                     <li><a href="blog-right-sidebar.html">OSS Platform Op</a></li>
                                     <li><a href="blog-right-sidebar.html">Service Platform Op</a></li>
                                     <li><a href="blog-right-sidebar.html">CFU/FU Support & ITSM</a></li>
@@ -52,5 +52,16 @@
                     </ul>
                 </div>
             </nav>
+
+            <div class="search widget">
+                <form action="" method="get" class="searchform" role="search">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search for...">
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" type="button"> <i class="ion-search"></i> </button>
+                        </span>
+                    </div>
+                </form>
+            </div>
         </div>
 </header>

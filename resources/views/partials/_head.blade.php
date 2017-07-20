@@ -14,6 +14,7 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="{{ URL::asset('css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ URL::asset('css/dashboard.css') }}">
     <link rel="stylesheet" href="{{ URL::asset('css/ionicons.min.css') }}">
     <link rel="stylesheet" href="{{ URL::asset('css/animate.css') }}">
     <link rel="stylesheet" href="{{ URL::asset('css/slider.css') }}">

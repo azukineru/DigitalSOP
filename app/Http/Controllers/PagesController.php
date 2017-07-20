@@ -25,4 +25,12 @@ class PagesController extends Controller {
 		return view('pages.login');
 	}
 
+	public function getDashboard() {
+		return view('pages.dashboard');
+	}
+
+	public function getBPO() {
+		return view('pages.bpo');
+	}
+
 }

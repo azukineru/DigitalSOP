@@ -11,8 +11,10 @@
 |
 */
 
+Route::get('bpo', 'PagesController@getBPO');
+Route::get('dashboard', 'PagesController@getDashboard');
 Route::get('login', 'PagesController@getLogin');
-
 Route::get('about', 'PagesController@getAbout');
-
 Route::get('/', 'PagesController@getIndex');
+
+Route::resource('aplikasi', 'AplikasiController');
