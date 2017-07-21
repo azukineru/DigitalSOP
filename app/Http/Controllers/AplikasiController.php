@@ -103,7 +103,30 @@ class AplikasiController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        //Validate the data
+        $this->validate($request, array(
+                'nama_aplikasi' => 'required|max:45',
+                'unit' => 'required',
+                'url_aplikasi' => 'required|max:100',
+                'url_sop' => 'required|max:200'
+            ));
+
+        //Save the data to the database
+        $aplikasi = Aplikasi::find($id);
+
+        $aplikasi->nama_aplikasi = $request->input('nama_aplikasi');
+        $aplikasi->unit = $request->input('unit');
+        $aplikasi->url_aplikasi = $request->input('url_aplikasi');
+        $aplikasi->url_sop = $request->input('url_sop');
+
+        $aplikasi->save();
+
+        //Set flash data with success message
+        Session::flash('success', 'Successfully saved');
+
+        //Redirect with flash data to aplikasi.show
+        return redirect()->route('aplikasi.show', $aplikasi->id);
+
     }
 
     /**

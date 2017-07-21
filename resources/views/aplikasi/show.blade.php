@@ -26,6 +26,8 @@
 			<div class="col-md-8">
 				<h1>{{ $aplikasi->nama_aplikasi }}</h1>
 				<p class="lead">
+					{{ $aplikasi->unit }}
+					<br>
 					{{ $aplikasi->url_aplikasi }}
 					<br>
 					{{ $aplikasi->url_sop }}
