@@ -11,12 +11,12 @@
          	<ul class="nav nav-sidebar">
 	            <li><a href="">Account</a></li>
 	            <li><a href="">Insert</a></li>
-	            <li><a href="">Update</a></li>
+	            <li><a href="">View</a></li>
           	</ul>
          	<ul class="nav nav-sidebar">
-	            <li><a href="">Application</a></li>
-	            <li><a href="create">Insert</a></li>
-	            <li><a href="show">View</a></li>
+	            <li><a href="/aplikasi">Application</a></li>
+				<li><a href="/aplikasi">Index</a></li>
+	            <li><a href="/aplikasi/create">Insert</a></li>
           	</ul>
         </div>
 
@@ -26,10 +26,6 @@
 	          	<div class="col-xs-6 col-sm-3 placeholder">
 	          		<img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
 	          		<h4>Manage Account</h4>
-	          	</div>
-	          	<div class="col-xs-6 col-sm-3 placeholder">
-	          		<img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
-	          		<h4>Manage Unit</h4>
 	          	</div>
 	          	<div class="col-xs-6 col-sm-3 placeholder">
 	          		<img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">

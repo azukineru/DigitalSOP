@@ -18,7 +18,11 @@ class AplikasiController extends Controller
      */
     public function index()
     {
-        //
+        //Create a variable and store all the SOP in it
+        $aplikasi = Aplikasi::all();
+
+        //Return a view and pass in the above variable
+        return view('aplikasi.index')->withAplikasi($aplikasi);
     }
 
     /**
@@ -83,7 +87,11 @@ class AplikasiController extends Controller
      */
     public function edit($id)
     {
-        //
+        //Find the application from database
+        $aplikasi = Aplikasi::find($id);
+
+        //Return the view and pass in the var we previously created
+        return view('aplikasi.edit')->withAplikasi($aplikasi);
     }
 
     /**
@@ -108,4 +116,22 @@ class AplikasiController extends Controller
     {
         //
     }
+
+    //Get all SOP in BPO Unit
+    public function getDataBPO()
+    {
+        //$sops = DB::table('aplikasis')->where('unit', 'BPO')->get();
+
+        $data['data'] = \DB::table('aplikasis')->where('unit', 'BPO')->get();
+
+       if(count($data) > 0)
+       {
+            return view('pages.bpo', $data);
+       }
+       else
+       {
+            return view('pages.bpo');
+       }
+    }
+
 }

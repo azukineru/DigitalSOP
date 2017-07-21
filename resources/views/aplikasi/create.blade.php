@@ -11,12 +11,12 @@
 		<ul class="nav nav-sidebar">
 			<li><a href="">Account</a></li>
 			<li><a href="">Insert</a></li>
-			<li><a href="">Update</a></li>
+			<li><a href="">View</a></li>
 		</ul>
 		<ul class="nav nav-sidebar">
 			<li><a href="">Application</a></li>
+			<li><a href="/aplikasi">Index</a></li>
 			<li class="active"><a href="create">Insert <span class="sr-only">(current)</span></a></li>
-			<li><a href="show">View</a></li>
 		</ul>
 	</div>
 
@@ -29,7 +29,7 @@
 					{{ Form::text('nama_aplikasi', null, array('class' => 'form-control')) }}
 
 					{{ Form::label('unit', 'Unit: ') }}
-					{{ Form::select('unit', ['IPA' => 'IT Planning & Infrastructure', 'EPD' => 'Enterprise & Analytic Platform Development', 'BPO' => 'BSS & CEM Platform Operation'], 'IPA', array('class' => 'form-control')) }}
+					{{ Form::select('unit', ['IPA' => 'IT Planning & Infrastructure', 'EPD' => 'Enterprise & Analytic Platform Development', 'BPD' => 'BSS & CEM Platform Development', 'OPD' => 'OSS Platform Development', 'SPD' => 'Service Platform Development',  'EPO' => 'Enterprise & Analytic Platform Operation', 'BPO' => 'BSS & CEM Platform Operation', 'OSO' => 'OSS Platform Operation', 'SPO' => 'Service Platform Operation', 'CFU' => 'CFU/FU Support  ITSM', 'GA' => 'General Affair'], 'IPA', array('class' => 'form-control')) }}
 
 					{{ Form::label('url_aplikasi', 'URL Application: ') }}
 					{{ Form::text('url_aplikasi', null, array('class' => 'form-control')) }}

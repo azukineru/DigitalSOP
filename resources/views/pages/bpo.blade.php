@@ -25,9 +25,9 @@
             </p>
         </div>
 
-        <h1 class="media-heading">Customer</h1>
         <br><br>
         <div class="row">
+            @foreach($data as $value)
             <div class="col-md-4 col-lg-4 col-xs-12">
                 <div class="media wow fadeInDown animated" data-wow-duration="500ms" data-wow-delay="600ms">
                     <div class="media-left">
@@ -36,61 +36,14 @@
                         </div>
                     </div>
                     <div class="media-body">
-                        <h4 class="media-heading">My Telkom Solution</h4>
-                        <p><a href="">SOP My Telkom Solution</a></p><p>Alamat aplikasi</p>
+                        <h4 class="media-heading">{{ $value->nama_aplikasi }}</h4>
+                        <p><a href="">SOP : Link</a></p><p>{{ $value->url_aplikasi }}</p>
                     </div>
                 </div>
             </div>
+            @endforeach
         </div>
 
-        <h1 class="media-heading">Payment</h1>
-        <br><br>
-        <div class="row">
-            <div class="col-md-4 col-lg-4 col-xs-12">
-                <div class="media wow fadeInDown animated" data-wow-duration="500ms" data-wow-delay="600ms">
-                    <div class="media-left">
-                        <div class="icon">
-                            <i class="ion-ios-lightbulb-outline"></i>
-                        </div>
-                    </div>
-                    <div class="media-body">
-                        <h4 class="media-heading">TREMS</h4>
-                        <p><a href="">SOP TREMS</a></p><p>Alamat aplikasi</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 col-lg-4 col-xs-12">
-                <div class="media wow fadeInDown animated" data-wow-duration="500ms" data-wow-delay="900ms">
-                    <div class="media-left">
-                        <div class="icon">
-                            <i class="ion-ios-lightbulb-outline"></i>
-                        </div>
-                    </div>
-                    <div class="media-body">
-                        <h4 class="media-heading">IPC</h4>
-                        <p><a href="">SOP IPC</a></p><p>Alamat aplikasi</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <h1 class="media-heading">Billing</h1>
-        <br><br>
-        <div class="row">
-            <div class="col-md-4 col-lg-4 col-xs-12">
-                <div class="media wow fadeInDown animated" data-wow-duration="500ms" data-wow-delay="600ms">
-                    <div class="media-left">
-                        <div class="icon">
-                            <i class="ion-ios-lightbulb-outline"></i>
-                        </div>
-                    </div>
-                    <div class="media-body">
-                        <h4 class="media-heading">Isiska Billing</h4>
-                        <p><a href="">SOP Isiska Billing</a></p><p>Alamat aplikasi</p>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
 </section>
 @endsection

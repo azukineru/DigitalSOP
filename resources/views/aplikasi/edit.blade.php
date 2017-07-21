@@ -1,6 +1,6 @@
 @extends('main_dashboard')
 
-@section('title','| View Application')
+@section('title','| Edit Application')
 
 @section('content')
 <div class="row">
@@ -23,13 +23,15 @@
 	<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
 		<h1 class="page-header">Data SOP - {{ $aplikasi->nama_aplikasi }}</h1>
 		<div class="row">
+			{!! Form::model($aplikasi, ['route' => ['aplikasi.update', $aplikasi->id]]) !!}
 			<div class="col-md-8">
-				<h1>{{ $aplikasi->nama_aplikasi }}</h1>
-				<p class="lead">
-					{{ $aplikasi->url_aplikasi }}
-					<br>
-					{{ $aplikasi->url_sop }}
-				</p>
+				{{ Form::label('nama_aplikasi', 'Application Name') }}
+				{{ Form::text('nama_aplikasi', null, ["class" => 'form-control input-lg']) }}
+				<br>
+				{{ Form::label('url_aplikasi', 'Application URL') }}
+				{{ Form::text('url_aplikasi', null, ["class" => 'form-control']) }}
+				{{ Form::label('url_sop', 'SOP URL') }}
+				{{ Form::text('url_sop', null, ["class" => 'form-control']) }}
 			</div>
 			<div class="col-md-4">
 				<div class="well">
@@ -40,15 +42,16 @@
 					<hr>
 					<div class="row">
 						<div class="col-sm-6">
-							{!! Html::linkRoute('aplikasi.edit', 'Edit', array($aplikasi->id), array('class' => 'btn btn-primary btn-block')) !!}
+							{!! Html::linkRoute('aplikasi.show', 'Cancel', array($aplikasi->id), array('class' => 'btn btn-danger btn-block')) !!}
 						</div>
 						<div class="col-sm-6">
-							{!! Html::linkRoute('aplikasi.destroy', 'Delete', array($aplikasi->id), array('class' => 'btn btn-danger btn-block')) !!}
+							{!! Html::linkRoute('aplikasi.update', 'Save', array($aplikasi->id), array('class' => 'btn btn-success btn-block')) !!}
 						</div>
 					</div>
 				</div>
 			</div>
-			</hr>
+			<hr>
+			{!! Form::close() !!}
 		</div>
 	</div>
 </div>

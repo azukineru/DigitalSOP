@@ -11,7 +11,10 @@
 |
 */
 
-Route::get('bpo', 'PagesController@getBPO');
+//Route for conditional select
+Route::get('bpo', 'AplikasiController@getDataBPO');
+
+//Route for static page
 Route::get('dashboard', 'PagesController@getDashboard');
 Route::get('login', 'PagesController@getLogin');
 Route::get('about', 'PagesController@getAbout');

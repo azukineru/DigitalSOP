@@ -29,8 +29,4 @@ class PagesController extends Controller {
 		return view('pages.dashboard');
 	}
 
-	public function getBPO() {
-		return view('pages.bpo');
-	}
-
 }
