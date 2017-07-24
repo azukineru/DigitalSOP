@@ -137,7 +137,13 @@ class AplikasiController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $aplikasi = Aplikasi::find($id);
+
+        $aplikasi->delete();
+
+        Session::flash('success', 'Successfully deleted.');
+
+        return redirect()->route('aplikasi.index');
     }
 
     //Get all SOP in BPO Unit

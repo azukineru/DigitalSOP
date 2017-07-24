@@ -6,15 +6,12 @@
 <div class="row">
 	<div class="col-sm-3 col-md-2 sidebar">
 		<ul class="nav nav-sidebar">
-			<li><a href="#">Overview</a></li>
-		</ul>
-		<ul class="nav nav-sidebar">
-			<li><a href="">Account</a></li>
+			<li><a href="">>>Account</a></li>
 			<li><a href="">Index</a></li>
 			<li><a href="">Insert</a></li>
 		</ul>
 		<ul class="nav nav-sidebar">
-			<li><a href="/aplikasi">Application</a></li>
+			<li><a href="/aplikasi">>>Application</a></li>
 			<li class="active"><a href="/aplikasi">Index <span class="sr-only">(current)</span></a></li>
 			<li><a href="aplikasi/create">Insert</a></li>			
 		</ul>

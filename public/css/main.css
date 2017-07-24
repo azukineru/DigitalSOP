@@ -139,6 +139,15 @@ a:hover {
   visibility: hidden;
   opacity: 0;
 }
+#hero-arealogin {
+  background: url('../images/sliderlogin.jpg') no-repeat 50%;
+  background-size: cover;
+  background-attachment: fixed;
+  padding: 130px 0;
+  color: #000;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+  position: relative;
+}											 
 #hero-area {
   background: url('../images/slider.jpg') no-repeat 50%;
   background-size: cover;
@@ -546,7 +555,7 @@ ul.social-icons li {
   background-size: cover;
   padding: 120px 0 25px 0;
   position: relative;
-  background: #02bdd5;
+  background: #dc0c0c;
   color: #fff;
 }
 .global-page-header h2 {
