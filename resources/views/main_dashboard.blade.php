@@ -10,10 +10,12 @@
 
     <div class="container-fluid">
     	@include('partials._messages')
-        @yield('content')     
+        @yield('content')  
+        
     </div>
 
     @include('partials._javascript')
+    @yield('js')
 </body>
 
 </html>

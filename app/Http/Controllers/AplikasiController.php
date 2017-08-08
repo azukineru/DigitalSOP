@@ -19,7 +19,7 @@ class AplikasiController extends Controller
     public function index()
     {
         //Create a variable and store all the SOP in it
-        $aplikasi = Aplikasi::all();
+        $aplikasi = Aplikasi::orderBy('id', 'desc')->paginate(10);
 
         //Return a view and pass in the above variable
         return view('aplikasi.index')->withAplikasi($aplikasi);

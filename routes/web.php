@@ -11,13 +11,25 @@
 |
 */
 
+//Dashboard
+Route::get('dashboard', 'HomeController@index')->name('dashboard');
+Route::get('sopentries', 'SopEntriesController@index');
+Route::get('sopentries/data', 'SopEntriesController@getAnyData');
+Route::get('sopentries/getSop/{filename}', [
+		'as' 	=> 'getEntry',
+		'uses' 	=> 'SopEntriesController@getSop'
+	]);
+
 //Route for conditional select
 Route::get('bpo', 'AplikasiController@getDataBPO');
 
+
 //Route for static page
-Route::get('dashboard', 'PagesController@getDashboard');
-Route::get('login', 'PagesController@getLogin');
 Route::get('about', 'PagesController@getAbout');
 Route::get('/', 'PagesController@getIndex');
 
-Route::resource('aplikasi', 'AplikasiController');
+//
+Route::resource('sopentries', 'SopEntriesController');
+
+//Authentication
+Auth::routes();
