@@ -51,7 +51,12 @@
 
 @section('js')
 	<script type="text/javascript">
-		$(function() {
+		function strtrunc(str, max){
+	   		return (typeof str === 'string' && str.length > max ? str.substring(0, max) + '...' : str);
+		};
+
+		$(document).ready(function() {
+			var short = 'deskripsi_aplikasi';
 		    $('#sop-table').DataTable({
 		        processing: true,
 		        serverSide: true,
@@ -61,8 +66,15 @@
 		            { data: 'nama_sop', name: 'nama_sop' },
 		            { data: 'unit', name: 'unit' },
 		            { data: 'url_aplikasi', name: 'url_aplikasi' },
-		            { data: 'deskripsi_aplikasi', name: 'deskripsi_aplikasi' },
-		            { data: 'link', name: 'link' },
+		            { data: 'deskripsi_aplikasi', name: 'deskripsi_aplikasi',
+		            	render: function(data, type, full, meta){
+		            		if(type == 'display'){
+		            			data = strtrunc(data, 20);
+		            		}
+		            		return data;
+		            	}
+		            },
+		            { data: 'link', name: 'link', orderable: 'false', searchable: 'false' },
 		            { data: 'action', name: 'action', orderable: 'false', searchable: 'false' }
 		        ]
 		    });
