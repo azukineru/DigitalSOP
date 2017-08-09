@@ -14,6 +14,11 @@ use Datatables;
 
 class SopEntriesController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -207,28 +212,6 @@ class SopEntriesController extends Controller
         ;
     }
 
-    //Download Data SOP
-    public function getSop($filename)
-    {
-        $entry = SopEntries::where('filename', '=', $filename)->firstOrFail();
-        $file = Storage::disk('public')->get($entry->filename);
- 
-        return (new Response($file, 200))
-              ->header('Content-Type', $entry->mime);
-    }
 
-    //Get SOP Data in BPO
-    public function getDataBPO()
-    {
-        $data['data'] = \DB::table('sopentries')->where('unit', 'BPO')->get();
 
-       if(count($data) > 0)
-       {
-            return view('pages.bpo', $data);
-       }
-       else
-       {
-            return view('pages.bpo');
-       }
-    }
 }

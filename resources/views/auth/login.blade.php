@@ -50,6 +50,8 @@
                             </div>
                         </div>
 
+                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+
                         <div class="form-group">
                             <div class="col-md-12">
                                 <button type="submit" class="btn btn-primary">

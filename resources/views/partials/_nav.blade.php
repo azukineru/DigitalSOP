@@ -25,11 +25,11 @@
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">IT Development <span class="caret"></span></a>
                             <div class="dropdown-menu">
                                 <ul>
-                                    <li><a href="404.html">IT Planning & Architecture</a></li>
-                                    <li><a href="gallery.html">Enterprise & Analytic Platform Dev</a></li>
-                                    <li><a href="gallery.html">BSS & CEM Platform Dev</a></li>
-                                    <li><a href="gallery.html">OSS Platform Dev</a></li>
-                                    <li><a href="gallery.html">Service Platform Dev</a></li>
+                                    <li><a href="ipa">IT Planning & Architecture</a></li>
+                                    <li><a href="epd">Enterprise & Analytic Platform Dev</a></li>
+                                    <li><a href="bpd">BSS & CEM Platform Dev</a></li>
+                                    <li><a href="opd">OSS Platform Dev</a></li>
+                                    <li><a href="spd">Service Platform Dev</a></li>
                                 </ul>
                             </div>
                         </li>
@@ -37,15 +37,15 @@
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">IT Operation <span class="caret"></span></a>
                             <div class="dropdown-menu">
                                 <ul>
-                                    <li><a href="blog-fullwidth.html">Enterprise & Analytic Platform Op</a></li>
+                                    <li><a href="epo">Enterprise & Analytic Platform Op</a></li>
                                     <li><a href="bpo">BSS & CEM Platform Op</a></li>
-                                    <li><a href="blog-right-sidebar.html">OSS Platform Op</a></li>
-                                    <li><a href="blog-right-sidebar.html">Service Platform Op</a></li>
-                                    <li><a href="blog-right-sidebar.html">CFU/FU Support & ITSM</a></li>
+                                    <li><a href="opo">OSS Platform Op</a></li>
+                                    <li><a href="spo">Service Platform Op</a></li>
+                                    <li><a href="cfu">CFU/FU Support & ITSM</a></li>
                                 </ul>
                             </div>
                         </li>
-                        <li><a href="contact.html">General Affair</a></li>
+                        <li><a href="ga">General Affair</a></li>
                         <li><a href="/about">Kipas Budaya</a></li>
                         @if (Auth::guest())
                         <li><a href="/login">Login</a></li>
