@@ -69,7 +69,7 @@
 		            { data: 'deskripsi_aplikasi', name: 'deskripsi_aplikasi',
 		            	render: function(data, type, full, meta){
 		            		if(type == 'display'){
-		            			data = strtrunc(data, 20);
+		            			data = strtrunc(data, 30);
 		            		}
 		            		return data;
 		            	}

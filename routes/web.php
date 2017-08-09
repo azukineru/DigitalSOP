@@ -20,8 +20,8 @@ Route::get('sopentries/getSop/{filename}', [
 		'uses' 	=> 'SopEntriesController@getSop'
 	]);
 
-//Route for conditional select
-Route::get('bpo', 'AplikasiController@getDataBPO');
+//Route for Each Unit
+Route::get('bpo', 'SopEntriesController@getDataBPO');
 
 
 //Route for static page

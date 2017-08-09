@@ -46,6 +46,11 @@ class SopEntriesController extends Controller
      */
     public function store(Request $request)
     {
+        $this->validate($request, array(
+                'nama_sop' => 'required|max:45',
+                'file_aplikasi' => 'required'
+            ));
+
         $last = \DB::table('sopentries')->orderBy('created_at', 'desc')->first();
 
         $file = $request->file_aplikasi;
@@ -182,13 +187,17 @@ class SopEntriesController extends Controller
         return redirect()->route('sopentries.index');
     }
 
+    //Get All Data SOP
     public function getAnyData()
     {
         $sop = SopEntries::select(['id', 'nama_sop', 'unit', 'url_aplikasi', 'deskripsi_aplikasi', 'filename', 'original_filename', 'updated_at']);
+
         
+
         return Datatables::of($sop)
             ->addColumn('link', function($sop) {
-                return '<a href="sopentries/getSop/'.$sop->filename.'">'.$sop->original_filename.'</a>';
+                $extstring = strlen($sop->original_filename)>30 ? "..." : "";
+                return '<a href="sopentries/getSop/'.$sop->filename.'">'.substr($sop->original_filename, 0, 30).''.$extstring.'</a>';
             })
             ->addColumn('action', function($sop) {
                 return '<a href="sopentries/'.$sop->id.'" class="btn btn-default btn-sm">View</a>  <a href="sopentries/'.$sop->id.'/edit" class="btn btn-default btn-sm">Edit</a>';
@@ -198,6 +207,7 @@ class SopEntriesController extends Controller
         ;
     }
 
+    //Download Data SOP
     public function getSop($filename)
     {
         $entry = SopEntries::where('filename', '=', $filename)->firstOrFail();
@@ -205,5 +215,20 @@ class SopEntriesController extends Controller
  
         return (new Response($file, 200))
               ->header('Content-Type', $entry->mime);
+    }
+
+    //Get SOP Data in BPO
+    public function getDataBPO()
+    {
+        $data['data'] = \DB::table('sopentries')->where('unit', 'BPO')->get();
+
+       if(count($data) > 0)
+       {
+            return view('pages.bpo', $data);
+       }
+       else
+       {
+            return view('pages.bpo');
+       }
     }
 }

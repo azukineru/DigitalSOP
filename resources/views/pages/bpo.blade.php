@@ -36,8 +36,11 @@
                         </div>
                     </div>
                     <div class="media-body">
-                        <h4 class="media-heading">{{ $value->nama_aplikasi }}</h4>
-                        <p><a href="">SOP : Link</a></p><p>{{ $value->url_aplikasi }}</p>
+                        <h4 class="media-heading">{{ $value->nama_sop }}</h4>
+                        @if(!(empty($value->url_aplikasi)))
+                            <p><a href="{{ $value->url_aplikasi }}">SOP URL</a></p>
+                        @endif
+                        <p><a href="{{ route('getEntry', $value->filename) }}">Download SOP</a></p>
                     </div>
                 </div>
             </div>

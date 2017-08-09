@@ -47,8 +47,11 @@
                         </li>
                         <li><a href="contact.html">General Affair</a></li>
                         <li><a href="/about">Kipas Budaya</a></li>
+                        @if (Auth::guest())
                         <li><a href="/login">Login</a></li>
-                        
+                        @else
+                        <li><a href="{{ route('dashboard') }}">Dashboard</a></li>
+                        @endif
                     </ul>
                 </div>
             </nav>
