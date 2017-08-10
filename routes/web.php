@@ -40,7 +40,8 @@ Route::get('ga', 'PagesController@getDataGA');
 Route::get('about', 'PagesController@getAbout');
 Route::get('/', 'PagesController@getIndex');
 
-//
+//CRUD SOP
+Route::resource('account', 'AccountController');
 Route::resource('sopentries', 'SopEntriesController');
 
 //Authentication

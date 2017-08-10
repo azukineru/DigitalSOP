@@ -6,9 +6,9 @@
 	<div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
          	<ul class="nav nav-sidebar">
-	            <li><a href="">>>Account</a></li>
-	            <li><a href="">Insert</a></li>
-	            <li><a href="">View</a></li>
+	            <li><a href="/account">>>Account</a></li>
+	            <li><a href="/account">Index</a></li>
+	            <li><a href="/account/create">Insert</a></li>
           	</ul>
 			<ul class="nav nav-sidebar">
 				<li><a href="/sopentries">>>SOP</a></li>

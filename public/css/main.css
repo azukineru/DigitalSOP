@@ -83,7 +83,9 @@ a:hover {
 .navbar-header .navbar-brand a {
   height: auto;
   display: inline-block;
-  margin-top: 8px;
+}
+.navbar-logo {
+  margin-right: 10px;
 }
 .navbar-inverse .navbar-toggle:focus,
 .navbar-inverse .navbar-toggle {
@@ -140,7 +142,7 @@ a:hover {
   opacity: 0;
 }
 #hero-arealogin {
-  background: url('../images/sliderlogin.jpg') no-repeat 50%;
+  background: url('../images/slider1.jpg') no-repeat 50%;
   background-size: cover;
   background-attachment: fixed;
   padding: 130px 0;
