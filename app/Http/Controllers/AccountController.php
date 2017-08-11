@@ -12,6 +12,11 @@ use Datatables;
 
 class AccountController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -42,7 +47,7 @@ class AccountController extends Controller
     {
         $this->validate($request, array(
             'name' => 'required|max:100',
-            'email' => 'required',
+            'email' => 'required|max:100|unique:users',
             'password' => 'required|min:6',
             'confirm_password' => 'required|min:6|same:password'
         ));
@@ -50,7 +55,7 @@ class AccountController extends Controller
         $acc = new User;
         $acc->name = $request->name;
         $acc->email = $request->email;
-        $acc->password = $request->password;
+        $acc->password = bcrypt($request->password);
         $acc->type = $request->type;
 
         $acc->save();
@@ -69,7 +74,9 @@ class AccountController extends Controller
      */
     public function show($id)
     {
-        //
+        $acc = User::where('id', $id)->first();
+
+        return view('account.profile')->with('account',$acc);
     }
 
     /**
@@ -80,7 +87,9 @@ class AccountController extends Controller
      */
     public function edit($id)
     {
-        //
+        $acc = User::where('id', $id)->first();
+
+        return view('account.edit')->with('account', $acc);
     }
 
     /**
@@ -105,4 +114,19 @@ class AccountController extends Controller
     {
         //
     }
+
+    //Get All Data SOP
+    public function getAnyData()
+    {
+        $acc = User::select(['id', 'name', 'email', 'type']);
+
+        return Datatables::of($acc)
+            ->addColumn('action', function($acc) {
+                return '<a href="account/'.$acc->id.'" class="btn btn-default btn-sm">View</a>  <a href="account/'.$acc->id.'/edit" class="btn btn-default btn-sm">Edit</a>';
+            })
+            ->rawColumns(['action'])
+            ->make(true)
+        ;
+    }
+
 }

@@ -13,6 +13,8 @@
 
 //Dashboard
 Route::get('dashboard', 'HomeController@index')->name('dashboard');
+Route::get('account', 'AccountController@index');
+Route::get('account/data', 'AccountController@getAnyData');
 Route::get('sopentries', 'SopEntriesController@index');
 Route::get('sopentries/data', 'SopEntriesController@getAnyData');
 

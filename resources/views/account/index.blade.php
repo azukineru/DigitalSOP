@@ -26,7 +26,7 @@
 		</div>
 		<div class="row">
 			<div class="col-md-12">
-				<table class="table" id="sop-table">
+				<table class="table" id="acc-table">
 					<thead>
 						<th>#</th>
 						<th>Name</th>
@@ -44,33 +44,19 @@
 
 @section('js')
 	<script type="text/javascript">
-		// function strtrunc(str, max){
-	 //   		return (typeof str === 'string' && str.length > max ? str.substring(0, max) + '...' : str);
-		// };
-
-		// $(document).ready(function() {
-		// 	var short = 'deskripsi_aplikasi';
-		//     $('#sop-table').DataTable({
-		//         processing: true,
-		//         serverSide: true,
-		//         ajax: 'http://localhost:8000/sopentries/data',
-		//         columns: [
-		//             { data: 'id', name: 'id' },
-		//             { data: 'nama_sop', name: 'nama_sop' },
-		//             { data: 'unit', name: 'unit' },
-		//             { data: 'url_aplikasi', name: 'url_aplikasi' },
-		//             { data: 'deskripsi_aplikasi', name: 'deskripsi_aplikasi',
-		//             	render: function(data, type, full, meta){
-		//             		if(type == 'display'){
-		//             			data = strtrunc(data, 30);
-		//             		}
-		//             		return data;
-		//             	}
-		//             },
-		//             { data: 'link', name: 'link', orderable: 'false', searchable: 'false' },
-		//             { data: 'action', name: 'action', orderable: 'false', searchable: 'false' }
-		//         ]
-		//     });
-		// });
+		$(document).ready(function() {
+		    $('#acc-table').DataTable({
+		        processing: true,
+		        serverSide: true,
+		        ajax: 'http://localhost:8000/account/data',
+		        columns: [
+		            { data: 'id', name: 'id' },
+		            { data: 'name', name: 'name' },
+		            { data: 'email', name: 'email' },
+		            { data: 'type', name: 'type' },
+		            { data: 'action', name: 'action', orderable: 'false', searchable: 'false' }
+		        ]
+		    });
+		});
 	</script>
 @endsection
