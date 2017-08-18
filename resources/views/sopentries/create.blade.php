@@ -5,11 +5,13 @@
 @section('content')
 <div class="row">
 	<div class="col-sm-3 col-md-2 sidebar">
+		@if( Auth::user()->type == 'A' )
 		<ul class="nav nav-sidebar">
-			<li><a href="">>>Account</a></li>
-			<li><a href="">Insert</a></li>
-			<li><a href="">View</a></li>
+			<li><a href="/account">>>Account</a></li>
+			<li><a href="/account">Insert</a></li>
+			<li><a href="/account/create">View</a></li>
 		</ul>
+		@endif
 		<ul class="nav nav-sidebar">
 			<li><a href="/sopentries">>>SOP</a></li>
 			<li><a href="/sopentries">Index</a></li>

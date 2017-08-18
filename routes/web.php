@@ -43,7 +43,11 @@ Route::get('about', 'PagesController@getAbout');
 Route::get('/', 'PagesController@getIndex');
 
 //CRUD SOP
-Route::resource('account', 'AccountController');
+Route::group(['middleware' => 'App\Http\Middleware\AdminMiddleware'], function()
+{
+	Route::resource('account', 'AccountController');
+});
+
 Route::resource('sopentries', 'SopEntriesController');
 
 //Authentication

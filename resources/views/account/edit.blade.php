@@ -20,60 +20,16 @@
 	<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
 		<h1 class="page-header">Edit Account - {{ $account->name }}</h1>
 		<div class="row">
-{{-- 			<form action="{!! action('AccountController@update', ['id' => $account->id]) !!}">
-				{{ method_field('PATCH') }}
-				<div class="col-md-8">
-					<div class="form-group">
-						<label>Name</label>
-						<input name="name" type="text" class="form-control" value="{{ $account->name }}">
-					</div>
-					<div class="form-group">
-						<label>Email</label>
-						<input name="email" type="text" class="form-control" value="{{ $account->email }}">
-					</div>
-					<div class="form-group">
-						<label>Account Type</label>
-						<select name="type" class="form-control">
-							<option value="A">Administrator</option>
-							<option value="B">Basic Account</option>
-						</select>
-					</div>
-					<div class="form-group">
-						<label>Password</label>
-						<input name="password" type="password" class="form-control">
-					</div>
-					<div class="form-group">
-						<label>Confirm Password</label>
-						<input name="confirm_password" type="password" class="form-control">
-					</div>
-				</div>
-
-				<div class="col-md-4">
-					<div class="well">
-						<div class="row">
-							<div class="col-sm-6">
-								<a href="/account/{{ $account->id }}" class="btn btn-danger btn-block">Cancel</a>
-							</div>
-							<div class="col-sm-6">						
-								<button type="submit" class="btn btn-primary btn-success btn-block">Save Changes</button>
-							</div>
-						</div>
-					</div>
-				</div>
-			</form> --}}
-
 			{!! Form::model($account, ['route' => ['account.update', $account->id], 'method' => 'PUT']) !!}
 			<div class="col-md-8">
 				<div class="form-group">
 					<label>Name</label>
 					<input name="name" type="text" class="form-control" value="{{ $account->name }}">
 				</div>
-
 				<div class="form-group">
 					<label>Email</label>
 					<input name="email" type="text" class="form-control" value="{{ $account->email }}">
-				</div>
-				
+				</div>	
 				<div class="form-group">
 					<label>Account Type</label>
 					<select name="type" class="form-control">
@@ -103,7 +59,7 @@
 					</div>
 				</div>
 			</div>
-			<hr>
+
 			{!! Form::close() !!}
 		</div>
 	</div>
