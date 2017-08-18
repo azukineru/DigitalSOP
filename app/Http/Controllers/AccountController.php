@@ -101,7 +101,36 @@ class AccountController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, array(
+            'name' => 'required|max:100',
+            'email' => 'required|max:100'
+        ));
+
+        if( !empty($request->input('passsword')) )
+        {
+            $this->validate($request, array(
+                'password' => 'min:6',
+                'confirm_password' => 'min:6|same:password'
+            ));
+        }
+
+        $acc = User::where('id', $id)->first();
+
+        $acc->name = $request->input('name');
+        $acc->email = $request->input('email');
+        $acc->type = $request->input('type');
+
+        if( !empty($request->input('password')) )
+        {
+            $acc->password = bcrypt($request->input('password'));
+        }
+
+        Session::flash('success', 'Successfully saved');
+
+        $acc->save();
+
+        return redirect()->route('account.show', $acc->id);
+
     }
 
     /**
